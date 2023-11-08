@@ -1,0 +1,41 @@
+@import "./../mixins";
+@import "./../variables";
+
+.movie-backscreen{
+  padding: 20px 80px 20px 20px;
+  .default-title,
+  .default-grey-text{
+    margin-bottom: 20px;
+  }
+  .default-text{
+    max-width: 815px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  &__title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__genres{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    .default-grey-text{
+      margin-bottom: unset;
+    }
+  }
+  &__dot{
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--primary-color);
+  }
+  @media screen and (max-width:767px) {
+    padding: 20px 40px 20px 20px;
+    .default-text{
+      margin-bottom: 30px;
+    }
+  }
+}

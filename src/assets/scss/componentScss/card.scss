@@ -1,0 +1,137 @@
+@import "./../mixins";
+@import "./../variables";
+
+.card {
+    display: flex;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.137);
+    background-color: var(--primary-color-dark2);
+    width: 100%;
+    height: 216px;
+    border-radius: 12px;
+    border: 3px solid transparent;
+    transition: height ease 0.4s, width 0.4s, box-shadow ease 0.4s, border-color ease 0.3s;
+    &_selected {
+        border-color: $secondary-color-opacity;
+    }
+    //DELETE if one or more slider blocks needed
+    &:hover {
+        box-shadow: 16px 19px 20px -8px rgba(0, 0, 0, 0.35);
+        -webkit-box-shadow: 16px 19px 20px -8px rgba(0, 0, 0, 0.35);
+        -moz-box-shadow: 16px 19px 20px -8px rgba(0, 0, 0, 0.35);
+
+        height: 295px;
+        cursor: pointer;
+        .card__img {
+            width: 195px;
+        }
+    }
+
+    &__img {
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 8px;
+        width: 128px;
+        transition: all ease 0.4s;
+    }
+    &__item-data {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        width: 100%;
+    }
+    &__genre {
+        display: flex;
+        gap: 5px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        li {
+            color: var(--primary-color);
+            word-break: break-all;
+        }
+        span {
+            color: var(--primary-color);
+        }
+    }
+    &__title {
+        font-size: 20px;
+        color: var(--contrast-color);
+        margin-bottom: 5px;
+    }
+    &__date {
+        color: var(--primary-color);
+        margin-bottom: 18px;
+    }
+    &__score {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__user-score {
+        color: var(--primary-color);
+    }
+    &__score-line {
+        display: block;
+        margin-bottom: 5px;
+        position: relative;
+        width: 100px;
+        height: 5px;
+        background-color: $secondary-color-opacity;
+        z-index: 1;
+        &_active {
+            display: block;
+            position: absolute;
+            height: 2px;
+            background-color: $secondary-color;
+            z-index: 2;
+        }
+    }
+    &__tool-tip {
+        padding: 15px 20px;
+        border-radius: 4px;
+        color: var(--primary-color-dark);
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        width: 125px;
+        bottom: 30px;
+        overflow: hidden;
+        background-color: var(--primary-color);
+        transition: opacity 0.2s ease-out, scale 0.2s ease-out;
+        scale: 0;
+        &_active {
+            scale: 1;
+            opacity: 1;
+            z-index: 2;
+        }
+    }
+    &__my-anime-list {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        &-title{
+            color: var(--primary-color);
+        }
+        &-link{
+            color: var(--primary-color);
+            transition: scale ease-in-out 0.2s;
+            &:hover {
+                scale: 1.2;
+            }
+        }
+    }
+
+    &__anime-list {
+        position: relative;
+        display: flex;
+        height: 100%;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    @media screen and (max-width: 530px) {
+        height: 295px;
+
+        &__img {
+            width: 195px;
+        }
+    }
+}

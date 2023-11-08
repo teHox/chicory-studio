@@ -1,0 +1,13 @@
+@import "../mixins";
+@import "../variables";
+
+.slider {
+    margin-top: 20px;
+    margin-bottom: 56px;
+
+    //Change height to 261px if one or more slider blocks needed
+    height: 321px;
+    @media screen and (max-width: 530px) {
+        height: 326px;
+    }
+}

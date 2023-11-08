@@ -1,0 +1,74 @@
+@import "./nullstyle";
+@import "./mixins";
+@import "./variables";
+@import "./fonts";
+
+@import './componentScss/signUp.scss';
+@import './componentScss/header.scss';
+@import './componentScss/sideMenu.scss';
+@import './componentScss/card.scss';
+@import './componentScss/home.scss';
+@import './componentScss/movie-backscreen.scss';
+@import './componentScss/defaultElements.scss';
+@import './componentScss/slider-block.scss';
+@import './componentScss/slider.scss';
+@import './componentScss/movie.scss';
+@import './componentScss/movie-slider.scss';
+
+*{
+    font-family: $primary-ff;
+    font-weight: 400;
+}
+
+:root {
+    --primary-color: #8C8C8C;
+    --primary-color-dark: rgb(237, 248, 255);
+    --background-color: rgba(241, 250, 255, 0.945);
+    --primary-color-dark2:  #e8f3ff;
+    --contrast-color: #2D2D2D;
+}
+html[data-theme="dark"] {
+    --primary-color: #8C8C8C;
+    --primary-color-dark: #2D2D2D;
+    --background-color: #2B2B2B;
+    --primary-color-dark2: #2A2A2A;
+    --contrast-color: #fff;
+}
+
+//temp option
+body{
+    -webkit-tap-highlight-color: transparent;
+    background: var(--background-color);
+    overflow-x: hidden;
+}
+
+.block{
+    font-size: $link-fz;
+}
+
+.app{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    &__container{
+        position: relative;
+        max-width: 1150px;
+        width: 100%;
+    }
+}
+.card-recomended{
+    &__img{
+        width: 126px;
+        height: 186px;
+        object-fit: cover;
+    }
+}
+
+.context-spinner{
+    position: absolute;
+    width: 150px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}

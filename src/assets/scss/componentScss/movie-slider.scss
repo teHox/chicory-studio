@@ -1,0 +1,41 @@
+@import "../mixins";
+@import "../variables";
+
+.movie-slider {
+  margin-top: 30px;
+  position: relative;
+
+  //&:nth-child(3) {
+  //  top: -56px;
+  //}
+  //
+  //&:nth-child(4) {
+  //  top: -112px;
+  //}
+  //
+  //&:nth-child(5) {
+  //  top: -168px;
+  //}
+
+  &__title {
+    font-size: 32px;
+    color: var(--contrast-color);
+  }
+
+  @media screen and (max-width: 530px) {
+    padding-right: 20px;
+  }
+
+  img {
+    margin: 0;
+    padding: 0;
+    border: 1px solid transparent;
+    max-width: 100%;
+
+    &:hover {
+      border-color: $secondary-color;
+    }
+  }
+
+  transition: border-color 0.3s ease;
+}
